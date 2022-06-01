@@ -2,8 +2,8 @@
 
 ## Requerimentos
 
-- Poetry >= 1.1.12
-- Python >= 3.9
+-   Poetry >= 1.1.12
+-   Python >= 3.9
 
 ## Como executar o projeto
 
@@ -17,4 +17,10 @@ Executar em ambiente de desenvolvimento:
 
 ```bash
 poetry run start
+```
+
+Executar formatador de código:
+
+```bash
+poetry run black computer_info/
 ```
