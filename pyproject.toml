@@ -12,6 +12,7 @@ start = "computer_info.main:start"
 python = "^3.9"
 Kivy = {extras = ["base"], version = "^2.1.0"}
 kivymd = "^0.104.2"
+psutil = "^5.9.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
