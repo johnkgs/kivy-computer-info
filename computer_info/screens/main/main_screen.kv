@@ -3,10 +3,13 @@
 #:include ./computer_info/uix/header/header.kv
 #:include ./computer_info/screens/computer_info/computer_info_screen.kv
 #:include ./computer_info/screens/processes_info/processes_info_screen.kv
+#:include ./computer_info/screens/processes_info/process_info/process_info_screen.kv
 
 MDScreen:
     Header:
+        id: header
     ScreenManager:
         id: screen_manager
         ComputerInfoScreen:
         ProcessesInfoScreen:
+        ProcessInfoScreen:

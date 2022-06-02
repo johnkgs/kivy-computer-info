@@ -1,0 +1,27 @@
+#:kivy 2.1.0
+#: set tooltip_height 64
+<ProcessInfoScreen>
+    name: 'process_info'
+    MDSpinner:
+        id: spinner
+        size_hint: None, None
+        size: 46, 46
+        pos_hint: {'center_x': .5, 'center_y': .5}
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: 16
+        spacing: 8
+        size_hint_y: None
+        pos_hint: {'top': (root.height - tooltip_height) / root.height}
+        height: root.height - tooltip_height
+        ScrollView:
+            MDGridLayout:
+                id: process_info_box
+                cols: 1
+                padding: 16, 0
+                adaptive_height: True
+
+<ProcessInfoContent>
+    id: 'process_info_content'
+    adaptive_height: True
+    orientation: 'vertical'

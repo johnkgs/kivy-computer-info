@@ -6,6 +6,9 @@ from kivymd.uix.tab import MDTabs, MDTabsBase, MDTabsLabel
 from computer_info.screens.computer_info.computer_info_screen import (
     ComputerInfoScreen,
 )
+from computer_info.screens.processes_info.process_info.process_info_screen import (
+    ProcessInfoScreen,
+)
 from computer_info.screens.processes_info.processes_info_screen import (
     ProcessesInfoScreen,
 )
@@ -15,6 +18,7 @@ from computer_info.utils.path import get_kv_file_path
 screen_manager = ScreenManager()
 screen_manager.add_widget(ComputerInfoScreen(name="computer_info"))
 screen_manager.add_widget(ProcessesInfoScreen(name="processes_info"))
+screen_manager.add_widget(ProcessInfoScreen(name="process_info"))
 
 
 class MainApp(MDApp):

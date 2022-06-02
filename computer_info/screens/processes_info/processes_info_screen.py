@@ -85,3 +85,7 @@ class ProcessesInfoScreen(Screen):
         ]["range"]
         pid = table.recycle_data[start_index]["text"]
         name = table.recycle_data[end_index - 1]["text"]
+
+        self.process_pid = int(pid)
+        self.process_name = str(name)
+        self.manager.current = "process_info"
