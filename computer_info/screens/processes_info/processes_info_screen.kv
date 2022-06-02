@@ -1,0 +1,29 @@
+#:kivy 2.1.0
+#: set header_height 112
+<ProcessesInfoScreen>
+    name: 'processes_info'
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: 16
+        spacing: 8
+        size_hint_y: None
+        pos_hint: {'top': (root.height - header_height) / root.height}
+        height: root.height - header_height
+
+        MDBoxLayout:
+            adaptive_height: True
+            MDIconButton:
+                icon: 'magnify'
+
+            MDTextField:
+                id: search_field
+                hint_text: 'Filtrar processo por pid ou nome'
+                on_text: root.set_processes_list(self.text, True)
+                width: 300
+        MDLabel:
+            text: 'Para visualizar informações do processo, dê um clique duplo na linha do processo'
+            adaptive_height: True
+
+        RecycleView:
+            id: recycle_view
+            key_size: 'height'

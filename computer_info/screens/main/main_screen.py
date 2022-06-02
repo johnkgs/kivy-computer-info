@@ -6,11 +6,15 @@ from kivymd.uix.tab import MDTabs, MDTabsBase, MDTabsLabel
 from computer_info.screens.computer_info.computer_info_screen import (
     ComputerInfoScreen,
 )
+from computer_info.screens.processes_info.processes_info_screen import (
+    ProcessesInfoScreen,
+)
 
 from computer_info.utils.path import get_kv_file_path
 
 screen_manager = ScreenManager()
 screen_manager.add_widget(ComputerInfoScreen(name="computer_info"))
+screen_manager.add_widget(ProcessesInfoScreen(name="processes_info"))
 
 
 class MainApp(MDApp):
@@ -29,7 +33,11 @@ class MainApp(MDApp):
         computer_info_screen: ComputerInfoScreen = sm.get_screen(
             "computer_info"
         )
+        processes_info_screen: ProcessesInfoScreen = sm.get_screen(
+            "processes_info"
+        )
         computer_info_screen.set_computer_info_list()
+        processes_info_screen.add_processes_data_table_widget()
 
     def on_tab_switch(
         self,
@@ -37,4 +45,7 @@ class MainApp(MDApp):
         instance_tab: MDTabsBase,
         *args: Tuple[MDTabsLabel, str],
     ):
-        pass
+        if instance_tab.name == "computer":
+            self.root.ids.screen_manager.current = "computer_info"
+            return
+        self.root.ids.screen_manager.current = "processes_info"
