@@ -1,0 +1,22 @@
+#:kivy 2.1.0
+#: set header_height 112
+<ComputerInfoScreen>
+    name: 'computer_info'
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: 16
+        spacing: 8
+        size_hint_y: None
+        pos_hint: {'top': (root.height - header_height) / root.height}
+        height: root.height - header_height
+        ScrollView:
+            MDGridLayout:
+                id: computer_info_box
+                cols: 1
+                padding: 16, 0
+                adaptive_height: True
+
+<ComputerInfoContent>
+    id: 'computer_info_content'
+    adaptive_height: True
+    orientation: "vertical"

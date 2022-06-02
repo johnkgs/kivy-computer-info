@@ -1,6 +1,10 @@
 #:kivy 2.1.0
 
 #:include ./computer_info/uix/header/header.kv
+#:include ./computer_info/screens/computer_info/computer_info_screen.kv
 
 MDScreen:
     Header:
+    ScreenManager:
+        id: screen_manager
+        ComputerInfoScreen:
