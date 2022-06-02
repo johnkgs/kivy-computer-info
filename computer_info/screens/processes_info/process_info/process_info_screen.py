@@ -66,7 +66,7 @@ class ProcessInfoScreen(Screen):
         self.change_header(name, pid)
 
     def hide_widget(self, widget, do_hide=True):
-        if hasattr(widget, "saved_attrs"):
+        if hasattr(widget, "saved_attributes"):
             if not do_hide:
                 (
                     widget.height,
