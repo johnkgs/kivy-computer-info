@@ -1,2 +1,5 @@
+from computer_info.screens.main.main_screen import MainApp
+
+
 def start():
-    print("Hello World")
+    MainApp().run()

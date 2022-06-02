@@ -1,0 +1,16 @@
+#:kivy 2.1.0
+<Header@MDBoxLayout>
+    orientation: "vertical"
+    MDToolbar:
+        id: toolbar
+        title: "Informações"
+    MDTabs:
+        id: tabs
+        tab_hint_x: True
+        on_tab_switch: app.on_tab_switch(*args)
+        MDTabsBase:
+            name: "computer"
+            title: "Computador"
+        MDTabsBase:
+            name: "processes"
+            title: "Processos"
